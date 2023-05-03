@@ -1,0 +1,38 @@
+
+
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+margin: 0;
+background: hsl(240, 56%, 98%);
+}
+
+.frame-anime {
+--anime-height: calc(var(--anime-width) / var(--anime-ratio));
+--anime-length: calc(var(--anime-width) * var(--anime-steps));
+--anime-bg-pos-x: calc(var(--anime-length) * -1);
+
+width: var(--anime-width);
+height: var(--anime-height);
+background: 0 0 / cover no-repeat;
+}
+
+.walk-anime {
+--anime-ratio: calc(908 / 436);
+--anime-width: 50vw;
+--anime-steps: 6;
+
+background-image: url("https://i.loli.net/2021/11/15/UrskxaZi4X791Bf.png");
+animation: walk-anime 1s steps(var(--anime-steps)) infinite;
+}
+
+@keyframes walk-anime {
+to {
+background-position: var(--anime-bg-pos-x) 0;
+}
+}
+
+

@@ -1,0 +1,51 @@
+.hero-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+  }
+  .search-container{
+    margin-top: 86px;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  input[type="text"] {
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    color: #555;
+    font-size: 16px;
+    font-weight: bold;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  button[type="submit"] {
+    margin-top: 16px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: #f72585;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  button[type="submit"]:hover {
+    background: #c72063;
+  }
+  
