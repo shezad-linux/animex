@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    },6000); // Change this to the time you want to delay the rendering of main content in milliseconds
+    },4000); // Change this to the time you want to delay the rendering of main content in milliseconds
   }, []);
 
   const handleSearch = (query) => {

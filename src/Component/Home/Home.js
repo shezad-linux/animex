@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "./Slider";
 import "./Home.css";
 
@@ -20,31 +20,46 @@ const images = [
   },
 ];
 
-class Home extends React.Component {
-  render() {
-    return (
-      <div className="home">
-        <Slider images={images} />
-        <div className="home-content">
-          <div className="spotlight-header"><h1>#SpotLight</h1></div>
-          <p>
-            Tokyo Revengers:
-            <br />
-            Christmas Showdown
-          </p>
-          <p>
-            Watching the news, Takemichi Hanagaki learns that his girlfriend
-            from way back in middle school, Hinata Tachibana, has died. The
-            only girlfriend he ever had was just killed by a villainous group
-            known as the Tokyo Manji Gang. He lives in a crappy apartment with
-            t...More
-          </p>
-          <button>Watch Now</button>
-          <button>Add To PlayList</button>
+function Home() {
+  const [showPrompt, setShowPrompt] = useState(false);
+
+  const handleAddToPlaylist = () => {
+    if (showPrompt) {
+      alert("Please enter a search query first.");
+    } else {
+      // Code to add to playlist
+    }
+  };
+
+  return (
+    <div className="home">
+      <Slider images={images} />
+      <div className="home-content">
+        <div className="spotlight-header">
+          <h1>#SpotLight</h1>
         </div>
+        <p>
+          Tokyo Revengers:
+          <br />
+          Christmas Showdown
+        </p>
+        <p>
+          Watching the news, Takemichi Hanagaki learns that his girlfriend from
+          way back in middle school, Hinata Tachibana, has died. The only
+          girlfriend he ever had was just killed by a villainous group known as
+          the Tokyo Manji Gang. He lives in a crappy apartment with t...More
+        </p>
+        <button onClick={() => setShowPrompt(true)}>Watch Now</button>
+        <button onClick={handleAddToPlaylist}>Add To Playlist</button>
+        {showPrompt && (
+          <div className="search-prompt">
+            <p>Please enter a search query before adding to playlist.</p>
+            <button onClick={() => setShowPrompt(false)}>Close</button>
+          </div>
+        )}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Home;
