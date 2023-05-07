@@ -6,6 +6,9 @@ import AnimeList from './Component/AnimeList/AnimeList';
 import Footer from './Component/Footer/Footer';
 import Home from './Component/Home/Home';
 import LoadingVideo from './Component/Loading/Loading';
+
+
+import Services from './Component/Services';
 const video = require('./video.mp4');
 
 
@@ -41,9 +44,12 @@ function App() {
        {isLoading ?  <LoadingVideo src={video}/> : 
        <main>
          <Header />
+        
+        
          <SearchBar onSearch={handleSearch} />
          <Home/>
          <AnimeList animeList={animeList} setAnimeList={setAnimeList} />
+         <Services/>
          <Footer/>
        </main>
        }
